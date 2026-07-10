@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preload" as="image" href="/assets/hero-travel-B1ytSHCK.jpg" />
+    <link rel="stylesheet" href="/assets/styles-Bg9RJsua.css" data-precedence="default" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" data-precedence="default" />
+    <title>
+      Smart Budget Travel Planner — Plan trips that fit your budget
+    </title>
+    <meta name="description" content="Enter your cities, dates and budget and instantly get transport options, stay, food, places, a day-wise itinerary and a full cost breakdown for India." />
+    <meta name="author" content="Smart Budget Travel Planner" />
+    <meta property="og:title" content="Smart Budget Travel Planner — Plan trips that fit your budget" />
+    <meta property="og:description" content="Enter your cities, dates and budget and instantly get transport options, stay, food, places, a day-wise itinerary and a full cost breakdown for India." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Smart Budget Travel Planner — Plan trips that fit your budget" />
+    <meta name="twitter:description" content="Enter your cities, dates and budget and instantly get transport options, stay, food, places, a day-wise itinerary and a full cost breakdown for India." />
+    <meta property="og:image" content="https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/e3badd9f-374b-46e7-9bd4-964cd3ce3d09" />
+    <meta name="twitter:image" content="https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/e3badd9f-374b-46e7-9bd4-964cd3ce3d09" />
+    <link rel="modulepreload" href="/assets/index-EpN7hwGT.js" />
+    <link rel="modulepreload" href="/assets/routes-BkLvqOz_.js" />
+    <link rel="modulepreload" href="/assets/SearchForm-CWdyEQxb.js" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+    <style>
+      @font-face {
+		font-family: &#39;CameraPlainVariable&#39;;
+		src: url(&#39;https://cdn.gpteng.co/mcp-widgets/v1/fonts/CameraPlainVariable.woff2&#39;) format(&#39;woff2&#39;);
+		font-weight: 100 900;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	#lovable-badge {
+		--badge-bg: #1b1b1b;
+		--badge-text: #c5c1b9;
+		--badge-text-hover: #dcdad5;
+		--badge-radius: 6px;
+		--badge-padding: 8px;
+		--badge-gap: 6px;
+		--badge-shadow: 
+			0 0 0 1px rgba(0, 0, 0, 0.88),
+			0 1px 0 0 rgba(0, 0, 0, 0.04),
+			0 2px 2px -1px rgba(0, 0, 0, 0.08),
+			0 4px 4px -2px rgba(0, 0, 0, 0.08),
+			0 8px 8px -4px rgba(0, 0, 0, 0.08),
+			0 16px 16px -8px rgba(0, 0, 0, 0.08);
+		--badge-transition-duration: 0.2s;
+		--badge-transition-easing: cubic-bezier(0.16, 1, 0.32, 1);
+		--focus-color: #575ECF;
+		--focus-offset: 2px;
+		--focus-width: 2px;
+		
+		position: fixed;
+		bottom: 12px;
+		right: 12px;
+		height: 24px;
+		display: flex;
+		align-items: center;
+		z-index: 1000000;
+		background-color: var(--badge-bg) !important;
+		color: var(--badge-text) !important;
+		border-radius: var(--badge-radius);
+		box-shadow: var(--badge-shadow) !important;
+		font-size: 12px;
+		font-family: CameraPlainVariable, &#34;CameraPlainVariable Fallback&#34;, -apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, sans-serif;
+		font-weight: 400 !important;
+		text-transform: none !important;
+		font-feature-settings: normal !important;
+		transform: translateZ(0);
+		will-change: transform, opacity;
+	}
+
+	#lovable-badge-cta {
+		display: flex;
+		align-items: center;
+		gap: var(--badge-gap);
+		padding: 0 var(--badge-padding);
+		height: 100%;
+		color: inherit;
+		text-decoration: none;
+		white-space: nowrap;
+		border-radius: var(--badge-radius) 0 0 var(--badge-radius);
+		transition: 
+			background-color var(--badge-transition-duration) ease,
+			color var(--badge-transition-duration) ease,
+			transform 0.1s ease;
+	}
+
+	#lovable-badge-cta:hover {
+		background: rgba(255, 255, 255, 0.04);
+		color: var(--badge-text-hover);
+	}
+
+	#lovable-badge-cta:active {
+		transform: scale(0.98);
+	}
+
+	#lovable-badge-cta:focus {
+		outline: none;
+	}
+
+	#lovable-badge-cta:focus-visible {
+		outline: var(--focus-width) solid var(--focus-color);
+		outline-offset: var(--focus-offset);
+		z-index: 1;
+	}
+
+	#lovable-badge-text {
+		line-height: 1;
+	}
+
+	#lovable-badge-divider {
+		width: 1px;
+		height: 24px;
+		background-color: rgba(255, 255, 255, 0.04);
+		flex-shrink: 0;
+	}
+
+	#lovable-badge-close {
+		width: 24px;
+		height: 24px;
+		min-width: 24px;
+		min-height: 24px;
+		cursor: pointer;
+		background: none;
+		border: none;
+		padding: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 0 var(--badge-radius) var(--badge-radius) 0;
+		flex-shrink: 0;
+		transition: 
+			background-color var(--badge-transition-duration) ease,
+			transform 0.1s ease;
+	}
+
+	#lovable-badge-close:hover {
+		background: rgba(255, 255, 255, 0.04);
+	}
+
+	#lovable-badge-close:active {
+		transform: scale(0.92);
+	}
+
+	#lovable-badge-close:focus {
+		outline: none;
+	}
+
+	#lovable-badge-close:focus-visible {
+		outline: var(--focus-width) solid var(--focus-color);
+		outline-offset: calc(var(--focus-offset) * -1);
+		z-index: 1;
+	}
+
+	#lovable-badge-close svg path {
+		fill: var(--badge-text);
+		transition: fill var(--badge-transition-duration) ease;
+	}
+
+	#lovable-badge-close:hover svg path {
+		fill: var(--badge-text-hover);
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		#lovable-badge-cta,
+		#lovable-badge-close,
+		#lovable-badge-close svg path {
+			transition: none;
+		}
+		
+		#lovable-badge-cta:active,
+		#lovable-badge-close:active {
+			transform: none;
+		}
+	}
+
+	@media (prefers-contrast: high) {
+		#lovable-badge {
+			--badge-bg: #000;
+			--badge-text: #fff;
+			--badge-text-hover: #fff;
+			border: 2px solid currentColor;
+		}
+		
+		#lovable-badge-cta:focus-visible,
+		#lovable-badge-close:focus-visible {
+			outline-width: 3px;
+		}
+	}
+    </style>
+    <script defer="" src="/~flock.js" data-proxy-url="/~api/analytics">
+    </script>
+    <script defer="" src="/__l5e/events.js" data-artifact-kind="dwl_content_hash" data-artifact-id="b8b97b310c616e75bb727538c550e683c79139176894c80b6f7e3e960277261e" data-commit-sha="df984bf602bb73f221d613ae365093f50e8678d5" data-context-token="v1.eyJwcm9qZWN0X2lkIjoiNDZjYTBlNjgtZDczOS00ZWQ2LTgwZmYtNDEyYTVlMTIzYjcwIiwiYXJ0aWZhY3Rfa2luZCI6ImR3bF9jb250ZW50X2hhc2giLCJhcnRpZmFjdF9pZCI6ImI4Yjk3YjMxMGM2MTZlNzViYjcyNzUzOGM1NTBlNjgzYzc5MTM5MTc2ODk0YzgwYjZmN2UzZTk2MDI3NzI2MWUiLCJjb21taXRfc2hhIjoiZGY5ODRiZjYwMmJiNzNmMjIxZDYxM2FlMzY1MDkzZjUwZTg2NzhkNSIsImV4cCI6MTc4MzcwMTI0Nn0.js-MYUIi6AhApB0CE6KT9N1aGrL2aBvcbFZWfERN_eM">
+    </script>
+  </head>
+  <body>
+    <!--$-->
+    <div class="min-h-screen bg-background">
+      <header class="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur-md">
+        <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
+          <a class="flex items-center gap-2 active" href="/" data-status="active" aria-current="page">          <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-[image:var(--gradient-primary)] text-primary-foreground shadow-soft">          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-compass h-5 w-5" aria-hidden="true">
+            <circle cx="12" cy="12" r="10">
+            </circle>
+            <path d="m16.24 7.76-1.804 5.411a2 2 0 0 1-1.265 1.265L7.76 16.24l1.804-5.411a2 2 0 0 1 1.265-1.265z">
+            </path>
+          </svg>
+</span>
+          <span class="text-lg font-bold tracking-tight">          Smart
+          <span class="text-gradient">          Trip
+</span>
+</span>
+</a>
+          <nav class="flex items-center gap-1 text-sm font-medium text-muted-foreground">
+            <a class="rounded-full px-3 py-1.5 transition-colors hover:bg-secondary hover:text-foreground bg-secondary text-foreground" href="/" data-status="active" aria-current="page">            Plan a trip
+</a>
+            <a href="/#how" class="hidden rounded-full px-3 py-1.5 transition-colors hover:bg-secondary hover:text-foreground sm:block">            How it works
+</a>
+          </nav>
+        </div>
+      </header>
+      <section class="relative overflow-hidden">
+        <div class="absolute inset-0">
+          <img src="/assets/hero-travel-B1ytSHCK.jpg" alt="Scenic Indian travel landscape at golden hour" class="h-full w-full object-cover" width="1600" height="1008" />
+          <div class="absolute inset-0 bg-[image:var(--gradient-hero)] opacity-80">
+          </div>
+        </div>
+        <div class="relative mx-auto max-w-6xl px-4 pb-14 pt-16 sm:pt-24">
+          <div class="max-w-2xl" style="opacity:0;transform:translateY(20px)">
+            <span class="inline-flex items-center gap-1.5 rounded-full bg-primary-foreground/15 px-3 py-1 text-xs font-semibold text-primary-foreground ring-1 ring-inset ring-primary-foreground/25">            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles h-3.5 w-3.5" aria-hidden="true">
+              <path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z">
+              </path>
+              <path d="M20 2v4">
+              </path>
+              <path d="M22 4h-4">
+              </path>
+              <circle cx="4" cy="20" r="2">
+              </circle>
+            </svg>
+            Budget-first trip planning for India
+</span>
+            <h1 class="mt-4 text-4xl font-extrabold leading-tight text-primary-foreground sm:text-5xl">
+              Plan a whole trip that fits your budget — in seconds.
+            </h1>
+            <p class="mt-4 max-w-xl text-base text-primary-foreground/85 sm:text-lg">
+              Enter your cities, dates and budget. Get transport options, stays, food, places to visit, a day-wise itinerary and a full cost breakdown instantly.
+            </p>
+          </div>
+          <div class="mt-8" style="opacity:0;transform:translateY(28px)">
+            <form class="rounded-3xl border border-border/60 bg-card/95 p-5 shadow-elegant backdrop-blur-md sm:p-6">
+              <datalist id="city-list">
+                <option value="Delhi, Delhi">
+                </option>
+                <option value="Mumbai, Maharashtra">
+                </option>
+                <option value="Bengaluru, Karnataka">
+                </option>
+                <option value="Chennai, Tamil Nadu">
+                </option>
+                <option value="Kolkata, West Bengal">
+                </option>
+                <option value="Hyderabad, Telangana">
+                </option>
+                <option value="Pune, Maharashtra">
+                </option>
+                <option value="Ahmedabad, Gujarat">
+                </option>
+                <option value="Jaipur, Rajasthan">
+                </option>
+                <option value="Udaipur, Rajasthan">
+                </option>
+                <option value="Jaisalmer, Rajasthan">
+                </option>
+                <option value="Jodhpur, Rajasthan">
+                </option>
+                <option value="Agra, Uttar Pradesh">
+                </option>
+                <option value="Varanasi, Uttar Pradesh">
+                </option>
+                <option value="Lucknow, Uttar Pradesh">
+                </option>
+                <option value="Rishikesh, Uttarakhand">
+                </option>
+                <option value="Nainital, Uttarakhand">
+                </option>
+                <option value="Manali, Himachal Pradesh">
+                </option>
+                <option value="Shimla, Himachal Pradesh">
+                </option>
+                <option value="Dharamshala, Himachal Pradesh">
+                </option>
+                <option value="Amritsar, Punjab">
+                </option>
+                <option value="Chandigarh, Chandigarh">
+                </option>
+                <option value="Srinagar, Jammu &amp; Kashmir">
+                </option>
+                <option value="Leh, Ladakh">
+                </option>
+                <option value="Goa, Goa">
+                </option>
+                <option value="Mangaluru, Karnataka">
+                </option>
+                <option value="Mysuru, Karnataka">
+                </option>
+                <option value="Hampi, Karnataka">
+                </option>
+                <option value="Kochi, Kerala">
+                </option>
+                <option value="Munnar, Kerala">
+                </option>
+                <option value="Alleppey, Kerala">
+                </option>
+                <option value="Thiruvananthapuram, Kerala">
+                </option>
+                <option value="Ooty, Tamil Nadu">
+                </option>
+                <option value="Pondicherry, Puducherry">
+                </option>
+                <option value="Madurai, Tamil Nadu">
+                </option>
+                <option value="Darjeeling, West Bengal">
+                </option>
+                <option value="Gangtok, Sikkim">
+                </option>
+                <option value="Guwahati, Assam">
+                </option>
+                <option value="Bhubaneswar, Odisha">
+                </option>
+                <option value="Indore, Madhya Pradesh">
+                </option>
+                <option value="Nagpur, Maharashtra">
+                </option>
+              </datalist>
+              <div class="grid gap-4 md:grid-cols-2">
+                <div class="relative space-y-1.5">
+                  <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-xs font-semibold text-muted-foreground" for="from">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin mr-1 inline h-3.5 w-3.5 text-primary" aria-hidden="true">
+                      <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0">
+                      </path>
+                      <circle cx="12" cy="10" r="3">
+                      </circle>
+                    </svg>
+                    From
+                  </label>
+                  <input class="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm" id="from" list="city-list" placeholder="Starting city" autocomplete="off" value="" />
+                </div>
+                <div class="relative space-y-1.5">
+                  <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-xs font-semibold text-muted-foreground" for="to">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin mr-1 inline h-3.5 w-3.5 text-accent" aria-hidden="true">
+                      <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0">
+                      </path>
+                      <circle cx="12" cy="10" r="3">
+                      </circle>
+                    </svg>
+                    To
+                  </label>
+                  <input class="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm" id="to" list="city-list" placeholder="Destination city" autocomplete="off" value="" />
+                  <button type="button" aria-label="Swap cities" class="absolute -left-3 top-8 hidden h-8 w-8 -translate-x-1/2 items-center justify-center rounded-full border border-border bg-card text-primary shadow-soft transition hover:bg-secondary md:flex">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right-left h-3.5 w-3.5" aria-hidden="true">
+                      <path d="m16 3 4 4-4 4">
+                      </path>
+                      <path d="M20 7H4">
+                      </path>
+                      <path d="m8 21-4-4 4-4">
+                      </path>
+                      <path d="M4 17h16">
+                      </path>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                <div class="space-y-1.5">
+                  <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-xs font-semibold text-muted-foreground" for="start">
+                    Start date
+                  </label>
+                  <input type="date" class="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm" id="start" value="" />
+                </div>
+                <div class="space-y-1.5">
+                  <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-xs font-semibold text-muted-foreground" for="end">
+                    Return date
+                  </label>
+                  <input type="date" class="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm" id="end" value="" />
+                </div>
+                <div class="space-y-1.5">
+                  <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-xs font-semibold text-muted-foreground" for="budget">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wallet mr-1 inline h-3.5 w-3.5 text-primary" aria-hidden="true">
+                      <path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1">
+                      </path>
+                      <path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4">
+                      </path>
+                    </svg>
+                    Budget (₹)
+                  </label>
+                  <input type="number" class="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm" id="budget" min="0" inputmode="numeric" placeholder="15000" value="" />
+                </div>
+                <div class="space-y-1.5">
+                  <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-xs font-semibold text-muted-foreground" for="people">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users mr-1 inline h-3.5 w-3.5 text-primary" aria-hidden="true">
+                      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2">
+                      </path>
+                      <path d="M16 3.128a4 4 0 0 1 0 7.744">
+                      </path>
+                      <path d="M22 21v-2a4 4 0 0 0-3-3.87">
+                      </path>
+                      <circle cx="9" cy="7" r="4">
+                      </circle>
+                    </svg>
+                    Travellers
+                  </label>
+                  <input type="number" class="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm" id="people" min="1" max="20" value="2" />
+                </div>
+              </div>
+              <button class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium cursor-pointer focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 disabled:cursor-not-allowed [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-[image:var(--gradient-primary)] text-primary-foreground shadow-elegant transition-all hover:shadow-glow hover:brightness-105 h-10 rounded-md px-8 mt-5 w-full gap-2" type="submit">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search h-4 w-4" aria-hidden="true">
+                  <path d="m21 21-4.34-4.34">
+                  </path>
+                  <circle cx="11" cy="11" r="8">
+                  </circle>
+                </svg>
+                Generate my travel plan
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+      <section class="mx-auto max-w-6xl px-4 py-14">
+        <div class="flex items-end justify-between gap-4">
+          <div>
+            <h2 class="text-2xl font-bold sm:text-3xl">
+              Popular right now
+            </h2>
+            <p class="mt-1 text-sm text-muted-foreground">
+              Tap a destination for an instant sample plan from Delhi.
+            </p>
+          </div>
+        </div>
+        <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <button type="button" class="group flex flex-col items-start rounded-2xl border border-border bg-card p-5 text-left shadow-soft transition-all hover:-translate-y-1 hover:border-primary/40 hover:shadow-elegant" style="opacity:0;transform:translateY(16px)">
+            <div class="flex w-full items-center justify-between">
+              <h3 class="text-lg font-bold">
+                Goa
+              </h3>
+              <span class="rounded-full bg-secondary px-2.5 py-1 text-xs font-semibold text-secondary-foreground">              from ₹
+              <!-- -->
+              18,000
+</span>
+            </div>
+            <p class="mt-1 text-sm text-muted-foreground">
+              Beaches, shacks and susegad vibes
+            </p>
+            <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary">            Build this plan
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true">
+              <path d="M5 12h14">
+              </path>
+              <path d="m12 5 7 7-7 7">
+              </path>
+            </svg>
+</span>
+          </button>
+          <button type="button" class="group flex flex-col items-start rounded-2xl border border-border bg-card p-5 text-left shadow-soft transition-all hover:-translate-y-1 hover:border-primary/40 hover:shadow-elegant" style="opacity:0;transform:translateY(16px)">
+            <div class="flex w-full items-center justify-between">
+              <h3 class="text-lg font-bold">
+                Manali
+              </h3>
+              <span class="rounded-full bg-secondary px-2.5 py-1 text-xs font-semibold text-secondary-foreground">              from ₹
+              <!-- -->
+              16,000
+</span>
+            </div>
+            <p class="mt-1 text-sm text-muted-foreground">
+              Snow peaks, river cafes and mountain air
+            </p>
+            <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary">            Build this plan
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true">
+              <path d="M5 12h14">
+              </path>
+              <path d="m12 5 7 7-7 7">
+              </path>
+            </svg>
+</span>
+          </button>
+          <button type="button" class="group flex flex-col items-start rounded-2xl border border-border bg-card p-5 text-left shadow-soft transition-all hover:-translate-y-1 hover:border-primary/40 hover:shadow-elegant" style="opacity:0;transform:translateY(16px)">
+            <div class="flex w-full items-center justify-between">
+              <h3 class="text-lg font-bold">
+                Jaipur
+              </h3>
+              <span class="rounded-full bg-secondary px-2.5 py-1 text-xs font-semibold text-secondary-foreground">              from ₹
+              <!-- -->
+              12,000
+</span>
+            </div>
+            <p class="mt-1 text-sm text-muted-foreground">
+              The Pink City of forts and bazaars
+            </p>
+            <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary">            Build this plan
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true">
+              <path d="M5 12h14">
+              </path>
+              <path d="m12 5 7 7-7 7">
+              </path>
+            </svg>
+</span>
+          </button>
+          <button type="button" class="group flex flex-col items-start rounded-2xl border border-border bg-card p-5 text-left shadow-soft transition-all hover:-translate-y-1 hover:border-primary/40 hover:shadow-elegant" style="opacity:0;transform:translateY(16px)">
+            <div class="flex w-full items-center justify-between">
+              <h3 class="text-lg font-bold">
+                Udaipur
+              </h3>
+              <span class="rounded-full bg-secondary px-2.5 py-1 text-xs font-semibold text-secondary-foreground">              from ₹
+              <!-- -->
+              14,000
+</span>
+            </div>
+            <p class="mt-1 text-sm text-muted-foreground">
+              The City of Lakes and palaces
+            </p>
+            <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary">            Build this plan
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true">
+              <path d="M5 12h14">
+              </path>
+              <path d="m12 5 7 7-7 7">
+              </path>
+            </svg>
+</span>
+          </button>
+          <button type="button" class="group flex flex-col items-start rounded-2xl border border-border bg-card p-5 text-left shadow-soft transition-all hover:-translate-y-1 hover:border-primary/40 hover:shadow-elegant" style="opacity:0;transform:translateY(16px)">
+            <div class="flex w-full items-center justify-between">
+              <h3 class="text-lg font-bold">
+                Rishikesh
+              </h3>
+              <span class="rounded-full bg-secondary px-2.5 py-1 text-xs font-semibold text-secondary-foreground">              from ₹
+              <!-- -->
+              11,000
+</span>
+            </div>
+            <p class="mt-1 text-sm text-muted-foreground">
+              Yoga capital on the holy Ganga
+            </p>
+            <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary">            Build this plan
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true">
+              <path d="M5 12h14">
+              </path>
+              <path d="m12 5 7 7-7 7">
+              </path>
+            </svg>
+</span>
+          </button>
+          <button type="button" class="group flex flex-col items-start rounded-2xl border border-border bg-card p-5 text-left shadow-soft transition-all hover:-translate-y-1 hover:border-primary/40 hover:shadow-elegant" style="opacity:0;transform:translateY(16px)">
+            <div class="flex w-full items-center justify-between">
+              <h3 class="text-lg font-bold">
+                Munnar
+              </h3>
+              <span class="rounded-full bg-secondary px-2.5 py-1 text-xs font-semibold text-secondary-foreground">              from ₹
+              <!-- -->
+              15,000
+</span>
+            </div>
+            <p class="mt-1 text-sm text-muted-foreground">
+              Rolling tea gardens in the Western Ghats
+            </p>
+            <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary">            Build this plan
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true">
+              <path d="M5 12h14">
+              </path>
+              <path d="m12 5 7 7-7 7">
+              </path>
+            </svg>
+</span>
+          </button>
+        </div>
+      </section>
+      <section id="how" class="border-t border-border bg-secondary/40">
+        <div class="mx-auto max-w-6xl px-4 py-14">
+          <div class="max-w-2xl">
+            <h2 class="text-2xl font-bold sm:text-3xl">
+              Everything in one plan
+            </h2>
+            <p class="mt-2 text-muted-foreground">
+              Our smart engine optimises for your budget and flags the cheapest and best-value choices automatically.
+            </p>
+          </div>
+          <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <div class="rounded-2xl border border-border bg-card p-5 shadow-soft" style="opacity:0;transform:translateY(16px)">
+              <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-[image:var(--gradient-primary)] text-primary-foreground">              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-train-front h-5 w-5" aria-hidden="true">
+                <path d="M8 3.1V7a4 4 0 0 0 8 0V3.1">
+                </path>
+                <path d="m9 15-1-1">
+                </path>
+                <path d="m15 15 1-1">
+                </path>
+                <path d="M9 19c-2.8 0-5-2.2-5-5v-4a8 8 0 0 1 16 0v4c0 2.8-2.2 5-5 5Z">
+                </path>
+                <path d="m8 19-2 3">
+                </path>
+                <path d="m16 19 2 3">
+                </path>
+              </svg>
+</span>
+              <h3 class="mt-4 font-bold">
+                Transport compared
+              </h3>
+              <p class="mt-1 text-sm text-muted-foreground">
+                Train (SL/3AC), state &amp; private buses, cabs and flights ranked by cost and time.
+              </p>
+            </div>
+            <div class="rounded-2xl border border-border bg-card p-5 shadow-soft" style="opacity:0;transform:translateY(16px)">
+              <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-[image:var(--gradient-primary)] text-primary-foreground">              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-hotel h-5 w-5" aria-hidden="true">
+                <path d="M10 22v-6.57">
+                </path>
+                <path d="M12 11h.01">
+                </path>
+                <path d="M12 7h.01">
+                </path>
+                <path d="M14 15.43V22">
+                </path>
+                <path d="M15 16a5 5 0 0 0-6 0">
+                </path>
+                <path d="M16 11h.01">
+                </path>
+                <path d="M16 7h.01">
+                </path>
+                <path d="M8 11h.01">
+                </path>
+                <path d="M8 7h.01">
+                </path>
+                <rect x="4" y="2" width="16" height="20" rx="2">
+                </rect>
+              </svg>
+</span>
+              <h3 class="mt-4 font-bold">
+                Where to stay
+              </h3>
+              <p class="mt-1 text-sm text-muted-foreground">
+                Hostels, budget hotels and homestays with nightly price, rating and area.
+              </p>
+            </div>
+            <div class="rounded-2xl border border-border bg-card p-5 shadow-soft" style="opacity:0;transform:translateY(16px)">
+              <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-[image:var(--gradient-primary)] text-primary-foreground">              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-utensils-crossed h-5 w-5" aria-hidden="true">
+                <path d="m16 2-2.3 2.3a3 3 0 0 0 0 4.2l1.8 1.8a3 3 0 0 0 4.2 0L22 8">
+                </path>
+                <path d="M15 15 3.3 3.3a4.2 4.2 0 0 0 0 6l7.3 7.3c.7.7 2 .7 2.8 0L15 15Zm0 0 7 7">
+                </path>
+                <path d="m2.1 21.8 6.4-6.3">
+                </path>
+                <path d="m19 5-7 7">
+                </path>
+              </svg>
+</span>
+              <h3 class="mt-4 font-bold">
+                What to eat
+              </h3>
+              <p class="mt-1 text-sm text-muted-foreground">
+                Local specialities and cheap-and-best restaurants with price-for-two.
+              </p>
+            </div>
+            <div class="rounded-2xl border border-border bg-card p-5 shadow-soft" style="opacity:0;transform:translateY(16px)">
+              <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-[image:var(--gradient-primary)] text-primary-foreground">              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pinned h-5 w-5" aria-hidden="true">
+                <path d="M18 8c0 3.613-3.869 7.429-5.393 8.795a1 1 0 0 1-1.214 0C9.87 15.429 6 11.613 6 8a6 6 0 0 1 12 0">
+                </path>
+                <circle cx="12" cy="8" r="2">
+                </circle>
+                <path d="M8.714 14h-3.71a1 1 0 0 0-.948.683l-2.004 6A1 1 0 0 0 3 22h18a1 1 0 0 0 .948-1.316l-2-6a1 1 0 0 0-.949-.684h-3.712">
+                </path>
+              </svg>
+</span>
+              <h3 class="mt-4 font-bold">
+                Places &amp; hidden gems
+              </h3>
+              <p class="mt-1 text-sm text-muted-foreground">
+                Top attractions plus local secrets, with entry fees and time needed.
+              </p>
+            </div>
+            <div class="rounded-2xl border border-border bg-card p-5 shadow-soft" style="opacity:0;transform:translateY(16px)">
+              <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-[image:var(--gradient-primary)] text-primary-foreground">              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar-range h-5 w-5" aria-hidden="true">
+                <rect width="18" height="18" x="3" y="4" rx="2">
+                </rect>
+                <path d="M16 2v4">
+                </path>
+                <path d="M3 10h18">
+                </path>
+                <path d="M8 2v4">
+                </path>
+                <path d="M17 14h-6">
+                </path>
+                <path d="M13 18H7">
+                </path>
+                <path d="M7 14h.01">
+                </path>
+                <path d="M17 18h.01">
+                </path>
+              </svg>
+</span>
+              <h3 class="mt-4 font-bold">
+                Day-wise itinerary
+              </h3>
+              <p class="mt-1 text-sm text-muted-foreground">
+                An optimised plan for every day, from arrival to departure.
+              </p>
+            </div>
+            <div class="rounded-2xl border border-border bg-card p-5 shadow-soft" style="opacity:0;transform:translateY(16px)">
+              <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-[image:var(--gradient-primary)] text-primary-foreground">              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-receipt-text h-5 w-5" aria-hidden="true">
+                <path d="M13 16H8">
+                </path>
+                <path d="M14 8H8">
+                </path>
+                <path d="M16 12H8">
+                </path>
+                <path d="M4 3a1 1 0 0 1 1-1 1.3 1.3 0 0 1 .7.2l.933.6a1.3 1.3 0 0 0 1.4 0l.934-.6a1.3 1.3 0 0 1 1.4 0l.933.6a1.3 1.3 0 0 0 1.4 0l.933-.6a1.3 1.3 0 0 1 1.4 0l.934.6a1.3 1.3 0 0 0 1.4 0l.933-.6A1.3 1.3 0 0 1 19 2a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1 1.3 1.3 0 0 1-.7-.2l-.933-.6a1.3 1.3 0 0 0-1.4 0l-.934.6a1.3 1.3 0 0 1-1.4 0l-.933-.6a1.3 1.3 0 0 0-1.4 0l-.933.6a1.3 1.3 0 0 1-1.4 0l-.934-.6a1.3 1.3 0 0 0-1.4 0l-.933.6a1.3 1.3 0 0 1-.7.2 1 1 0 0 1-1-1z">
+                </path>
+              </svg>
+</span>
+              <h3 class="mt-4 font-bold">
+                Full cost breakdown
+              </h3>
+              <p class="mt-1 text-sm text-muted-foreground">
+                Travel, stay, food, entries, misc and platform fee — total at a glance.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer class="border-t border-border">
+        <div class="mx-auto max-w-6xl px-4 py-8 text-sm text-muted-foreground">
+          <p class="font-semibold text-foreground">
+            SmartTrip · Smart Budget Travel Planner
+          </p>
+          <p class="mt-1">
+            Prices are smart estimates for planning. Always confirm live fares before booking.
+          </p>
+        </div>
+      </footer>
+    </div>
+    <script>
+      (function(a,f){let l;try{l=JSON.parse(sessionStorage.getItem(a)||&#34;{}&#34;)}catch{return}const n=l?.[f||history.state?.__TSR_key];let c=!1;for(const t in n){const e=n[t],o=e?.scrollX,s=e?.scrollY;if(Number.isFinite(o)&amp;&amp;Number.isFinite(s)){if(t===&#34;window&#34;)scrollTo(o,s),c=!0;else if(t)try{const r=document.querySelector(t);r&amp;&amp;(r.scrollLeft=o,r.scrollTop=s)}catch{}}}if(c)return;const i=location.hash.slice(1);if(i){const t=history.state?.__hashScrollIntoViewOptions??!0;if(t){const e=document.getElementById(i);e&amp;&amp;e.scrollIntoView(t)}return}scrollTo(0,0)})(&#34;tsr-scroll-restoration-v1_3&#34;);document.currentScript.remove()
+    </script>
+    <!--/$-->
+    <script class="$tsr" id="$tsr-stream-barrier">
+      (self.$R=self.$R||{})[&#34;tsr&#34;]=[];self.$_TSR={h(){this.hydrated=!0,this.c()},e(){this.streamEnded=!0,this.c()},c(){this.hydrated&amp;&amp;this.streamEnded&amp;&amp;(delete self.$_TSR,delete self.$R.tsr)},p(e){this.initialized?e():this.buffer.push(e)},buffer:[]};$_TSR.router=($R=&gt;$R[0]={manifest:$R[1]={routes:$R[2]={__root__:$R[3]={preloads:$R[4]=[&#34;/assets/index-EpN7hwGT.js&#34;],scripts:$R[5]=[$R[6]={attrs:$R[7]={type:&#34;module&#34;,async:!0,src:&#34;/assets/index-EpN7hwGT.js&#34;}}]},&#34;/&#34;:$R[8]={preloads:$R[9]=[&#34;/assets/routes-BkLvqOz_.js&#34;,&#34;/assets/SearchForm-CWdyEQxb.js&#34;]}}},matches:$R[10]=[$R[11]={i:&#34;__root__�&#34;,u:1783697646433,s:&#34;success&#34;,ssr:!0},$R[12]={i:&#34;��&#34;,u:1783697646433,s:&#34;success&#34;,ssr:!0}],lastMatchId:&#34;��&#34;})($R[&#34;tsr&#34;]);$_TSR.e();document.currentScript.remove()
+    </script>
+    <script type="module" async="" src="/assets/index-EpN7hwGT.js">
+    </script>
+    <aside id="lovable-badge" role="complementary" dir="ltr" lang="en" aria-label="Edit with Lovable">
+      <a id="lovable-badge-cta" target="_blank" href="https://lovable.dev/projects/46ca0e68-d739-4ed6-80ff-412a5e123b70?utm_source=lovable-badge" rel="noopener nofollow" aria-label="Edit with Lovable">      <span id="lovable-badge-text">      Edit with
+</span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="52" height="16" fill="none" viewBox="0 0 52 16">
+        <path fill="#FCFBF8" fill-rule="evenodd" d="M20.318 5.25c.643 0 1.206.14 1.69.418a2.81 2.81 0 0 1 1.118 1.191c.266.513.4 1.115.4 1.807s-.134 1.296-.4 1.812a2.81 2.81 0 0 1-1.118 1.193c-.484.278-1.047.418-1.69.418s-1.208-.14-1.695-.418a2.85 2.85 0 0 1-1.125-1.193c-.262-.516-.393-1.12-.393-1.812s.131-1.294.393-1.807a2.848 2.848 0 0 1 1.125-1.191c.487-.279 1.052-.418 1.695-.418Zm0 1.425c-.27 0-.504.076-.7.228-.193.147-.34.37-.443.67-.102.295-.153.66-.153 1.093 0 .435.05.801.153 1.1.102.3.25.524.443.676.196.147.43.22.7.22.27 0 .502-.073.694-.22.193-.152.341-.375.443-.67.103-.299.153-.667.153-1.106 0-.65-.112-1.145-.337-1.481a1.08 1.08 0 0 0-.953-.51ZM32.7 5.25c.61 0 1.127.1 1.549.3.422.197.74.48.953.849.217.368.325.809.325 1.32v2.704c0 .29.02.562.062.812.044.245.108.4.19.466V12h-1.935a5.895 5.895 0 0 1-.105-.684 7.745 7.745 0 0 1-.02-.228 2.293 2.293 0 0 1-.151.203c-.205.242-.47.437-.793.584-.32.143-.685.215-1.094.215-.406 0-.77-.08-1.094-.24a1.845 1.845 0 0 1-.756-.682 1.984 1.984 0 0 1-.27-1.045c0-.606.178-1.069.535-1.388.356-.324.87-.534 1.542-.633l1.125-.16c.225-.032.403-.074.534-.123a.622.622 0 0 0 .288-.196.549.549 0 0 0 .093-.327.65.65 0 0 0-.11-.367.702.702 0 0 0-.32-.27c-.14-.07-.31-.105-.51-.105-.32 0-.576.083-.768.251-.193.164-.298.39-.314.676h-1.923c.016-.434.147-.82.393-1.155.25-.34.596-.604 1.039-.792.442-.189.954-.283 1.535-.283Zm.99 3.498a.98.98 0 0 1-.215.14 2.49 2.49 0 0 1-.584.178l-.473.092c-.315.061-.553.156-.713.283-.155.127-.233.305-.233.534 0 .23.084.412.252.547.168.135.383.203.645.203s.494-.058.694-.173c.201-.118.355-.282.461-.49.11-.21.166-.448.166-.714v-.6Zm4.526-2.375c.065-.125.138-.243.221-.349.197-.25.437-.44.719-.571.282-.135.6-.203.952-.203.528 0 .988.138 1.377.412.389.275.688.67.896 1.186.21.512.314 1.12.314 1.824 0 .7-.107 1.309-.32 1.825-.213.512-.518.906-.915 1.18-.393.275-.854.412-1.383.412-.352 0-.667-.062-.946-.184a1.832 1.832 0 0 1-.7-.554 2.2 2.2 0 0 1-.234-.383V12h-1.843V3h1.862v3.373Zm1.284.296c-.274 0-.51.085-.707.253-.192.163-.338.397-.436.7a3.376 3.376 0 0 0-.148 1.05c0 .406.05.759.148 1.058.098.299.243.53.436.694.197.164.433.246.707.246.279 0 .512-.082.7-.246.193-.164.336-.395.43-.694.099-.3.148-.652.148-1.058 0-.405-.05-.757-.147-1.056-.095-.299-.238-.53-.43-.694a1.015 1.015 0 0 0-.7-.253Zm9.416-1.419c.602 0 1.136.131 1.604.393.466.262.829.643 1.086 1.143.263.5.394 1.097.394 1.794 0 .25-.002.449-.006.596H47.51c.018.288.071.538.164.75a1.3 1.3 0 0 0 .491.596c.214.13.465.196.757.196.319 0 .583-.082.792-.246.209-.167.34-.403.393-.706h1.862a2.48 2.48 0 0 1-.485 1.235 2.54 2.54 0 0 1-1.051.805c-.439.188-.949.283-1.53.283-.655 0-1.225-.125-1.708-.375a2.672 2.672 0 0 1-1.13-1.143c-.267-.508-.4-1.137-.4-1.887 0-.712.14-1.327.418-1.843a2.86 2.86 0 0 1 1.155-1.186c.491-.27 1.051-.405 1.678-.405Zm-.044 1.345c-.274 0-.516.068-.725.203a1.29 1.29 0 0 0-.479.59 2.045 2.045 0 0 0-.132.498h2.562a1.873 1.873 0 0 0-.138-.602 1.061 1.061 0 0 0-.418-.516 1.243 1.243 0 0 0-.67-.173Z" clip-rule="evenodd">
+        </path>
+        <path fill="#FCFBF8" d="m26.605 9.995 1.342-4.566h1.924L27.628 12h-2.07l-2.33-6.57h1.98l1.397 4.565Zm-13.013.143h2.256c1.632 0 1.421 1.837 1.418 1.861h-5.603V3h1.93v7.138Zm31.516 1.861h-1.862V3h1.862v8.999Z">
+        </path>
+        <path fill="url(#a)" fill-rule="evenodd" d="M2.7 3c1.492 0 2.7 1.192 2.7 2.663v1.012h.9c1.49 0 2.7 1.192 2.7 2.662S7.791 12 6.3 12H0V5.663C0 4.193 1.209 3 2.7 3Z" clip-rule="evenodd">
+        </path>
+        <defs>
+          <radialGradient id="a" cx="0" cy="0" r="1" gradientTransform="matrix(-1.54236 7.07838 -10.231 -2.15602 4.627 5.022)" gradientUnits="userSpaceOnUse">
+            <stop offset=".106" stop-color="#FE7B02">
+            </stop>
+            <stop offset=".394" stop-color="#FE3F21">
+            </stop>
+            <stop offset=".608" stop-color="#F858BC">
+            </stop>
+            <stop offset=".929" stop-color="#575ECF">
+            </stop>
+          </radialGradient>
+        </defs>
+      </svg>
+</a>
+      <span id="lovable-badge-divider" aria-hidden="true"></span>
+      <button id="lovable-badge-close" aria-label="Dismiss" title="Dismiss" type="button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" aria-hidden="true">
+          <path d="M10.646 4.646a.5.5 0 1 1 .707.708L8.707 8l2.646 2.646a.5.5 0 1 1-.707.707L8 8.707l-2.646 2.646a.5.5 0 1 1-.708-.707L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708L8 7.293l2.646-2.647Z">
+          </path>
+        </svg>
+      </button>
+    </aside>
+    <script>
+      // Don&#39;t show the lovable-badge if the page is in an iframe or if it&#39;s being rendered by puppeteer (screenshot service)
+	if (window.self !== window.top || navigator.userAgent.includes(&#39;puppeteer&#39;)) {
+		var badge = document.getElementById(&#39;lovable-badge&#39;);
+		if (badge) {
+			badge.style.display = &#39;none&#39;;
+		}
+	}
+
+	// Add click event listener to close button with animation
+	var closeButton = document.getElementById(&#39;lovable-badge-close&#39;);
+	if (closeButton) {
+		closeButton.addEventListener(&#39;click&#39;, function(event) {
+			event.preventDefault();
+			event.stopPropagation();
+			var badge = document.getElementById(&#39;lovable-badge&#39;);
+			if (badge) {
+				badge.classList.add(&#39;closing&#39;);
+				setTimeout(function() {
+					if (badge) {
+						badge.style.display = &#39;none&#39;;
+					}
+				}, 240);
+			}
+		});
+	}
+    </script>
+  </body>
+</html>
